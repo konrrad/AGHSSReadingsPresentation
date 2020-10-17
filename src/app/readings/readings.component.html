@@ -1,6 +1,9 @@
 <input placeholder="SENSOR ID" type="text" [(ngModel)]="this.id" (change)="get_readings()">
 <button (click)="process_data()">PROCESS DATA</button>
 <p *ngIf="this.invalid_reading"> Provide Valid a and b</p>
+
+<button (click)="this.toggle_plot()" >Show Plot</button>
+<app-plot *ngIf="this.plot_visible" [xdata]="this.get_timestamps()" [ydata]="this.get_results()" ></app-plot>
 <div>
-    <app-reading *ngFor="let reading of readings" [reading]="reading"></app-reading>
+        <app-reading *ngFor="let reading of readings" [reading]="reading"></app-reading>
 </div>

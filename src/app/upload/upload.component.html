@@ -1,18 +1,26 @@
-<div >
-    <div>
-        <input type="file" (change)="fileWithIdsChanged($event)">
-        <button type="submit" (click)="uploadDocWithIds()">SUBMIT</button>
+<div class="container">
+
+    <div class="row">
+        <div class="col border-right jumbotron">
+            <h3>File with ids:</h3>
+            <input type="file" (change)="fileWithIdsChanged($event)">
+            <button type="button" class="btn btn-primary" type="submit" (click)="uploadDocWithIds()">SUBMIT</button>
+        </div>
+        
+        <div class="col border-left jumbotron">
+            <h3>File with readings:</h3>
+            <input type="file" (change)="fileWithReadingsChanged($event)">
+            <button type="button" class="btn btn-primary" type="submit" (click)="uploadDocWithReadings()">SUBMIT</button>
+        </div>
+    </div>
+    <div *ngIf="this.ids_uploaded && this.readings_uploaded" class="col" >
+        <h1 class="text-success text-center">Files accepted</h1>
+        <h2 class="text-center">Navigate to:</h2>
+        <div class="mt-4">
+            <button type="button" class="btn btn-success col"><a class="text-white"  routerLink="/sensors">List of sensors</a></button>
+            <button type="button" class="btn btn-success col mt-4"><a class="text-white"  routerLink="/readings">List of readings</a></button>
+        </div>
     </div>
 </div>
-
-
-
-<div>
-    <input type="file" (change)="fileWithReadingsChanged($event)">
-    <button type="submit" (click)="uploadDocWithReadings()">SUBMIT</button>
-</div>
-
-
-<button routerLink="/sensors"  [disabled]="!this.ids_uploaded || !this.readings_uploaded">ACCEPT</button>
 
 

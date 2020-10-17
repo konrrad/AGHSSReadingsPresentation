@@ -16,9 +16,21 @@ export class ReadingsComponent implements OnInit {
   public readings:Reading[];
   private sensor:Sensor;
   public invalid_reading:boolean;
+  public plot_visible:boolean=false;
   constructor(private data_service:ReaddataService) { }
 
   ngOnInit(): void {
+  }
+
+  get_timestamps():Array<number>
+  {
+    return this.readings.map(element=>element.timestamp);
+  }
+
+  get_results():Array<number>
+  {
+    return this.readings.map(element=>element.result);
+
   }
 
   get_readings():void
@@ -43,6 +55,11 @@ export class ReadingsComponent implements OnInit {
       this.readings.forEach(element=>element.process_data(this.sensor.a,this.sensor.b));
     }
     
+  }
+
+  toggle_plot():void
+  {
+    this.plot_visible= !this.plot_visible;
   }
 
 }
