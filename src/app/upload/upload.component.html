@@ -1,0 +1,18 @@
+<div >
+    <div>
+        <input type="file" (change)="fileWithIdsChanged($event)">
+        <button type="submit" (click)="uploadDocWithIds()">SUBMIT</button>
+    </div>
+</div>
+
+
+
+<div>
+    <input type="file" (change)="fileWithReadingsChanged($event)">
+    <button type="submit" (click)="uploadDocWithReadings()">SUBMIT</button>
+</div>
+
+
+<button routerLink="/sensors"  [disabled]="!this.ids_uploaded || !this.readings_uploaded">ACCEPT</button>
+
+

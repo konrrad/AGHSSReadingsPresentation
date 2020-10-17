@@ -1,0 +1,6 @@
+<input placeholder="SENSOR ID" type="text" [(ngModel)]="this.id" (change)="get_readings()">
+<button (click)="process_data()">PROCESS DATA</button>
+<p *ngIf="this.invalid_reading"> Provide Valid a and b</p>
+<div>
+    <app-reading *ngFor="let reading of readings" [reading]="reading"></app-reading>
+</div>
