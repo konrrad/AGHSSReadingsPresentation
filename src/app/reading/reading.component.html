@@ -1,5 +1,18 @@
-<p>TIMESTAMP:{{this.reading.timestamp}} RESULT:{{this.reading.result}}</p>
+<!-- <p>TIMESTAMP:{{this.reading.timestamp}} RESULT:{{this.reading.result}}</p>
 <p *ngIf="this.reading.processing_result">
     PROCESSED:{{this.reading.processing_result}}
-</p>
+</p> -->
+<div class="container">
+<div class="row">
+    <div class="col">
+        {{this.reading.timestamp}}
+    </div>
+    <div class="col">
+        {{this.reading.result}}
+    </div>
+    <div *ngIf="this.reading.processing_result" class="col">
+        {{this.reading.processing_result}}
+    </div>
+</div>
+</div>
 

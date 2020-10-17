@@ -1,9 +1,21 @@
-<input placeholder="SENSOR ID" type="text" [(ngModel)]="this.id" (change)="get_readings()">
-<button (click)="process_data()">PROCESS DATA</button>
-<p *ngIf="this.invalid_reading"> Provide Valid a and b</p>
+<div class="jumbotron">
+    <input placeholder="SENSOR ID" type="text" [(ngModel)]="this.id" (change)="get_readings()">
+    <button class="btn btn-primary ml-3" (click)="process_data()">PROCESS DATA</button>
+    <button class="btn btn-primary ml-3" (click)="this.toggle_plot()" >Show Plot</button>
+    <h3 class="text-danger" *ngIf="this.invalid_reading"> Provide Valid a and b</h3>
+</div>
 
-<button (click)="this.toggle_plot()" >Show Plot</button>
+
+
 <app-plot *ngIf="this.plot_visible" [xdata]="this.get_timestamps()" [ydata]="this.get_results()" ></app-plot>
-<div>
-        <app-reading *ngFor="let reading of readings" [reading]="reading"></app-reading>
+<div class="container" [ngClass]="{'scrollable-div' : this.plot_visible}">
+    <div class="row">
+        <div class="col text-center">
+            <h3 class="vertical-text">TIMESTAMP</h3>
+        </div>
+        <div class="col">
+            <h3 class="text-center">READING</h3>
+        </div>
+    </div>
+    <app-reading class="container" *ngFor="let reading of readings" [reading]="reading"></app-reading>
 </div>
