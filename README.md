@@ -1,4 +1,4 @@
-# AGHSSTestsPresentation
+# AGHSSReadingsPresentation
 
 Zadanie 2 II etapu rekrutacji AGH Space Systems.
 
