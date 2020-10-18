@@ -35,7 +35,6 @@ export class ReaddataService {
   private parse_sensors():void
   {
     var lines=this.get_lines_from_string(this.id_name_unparsed.trim());
-    console.log("PARSE SENSORS");
     lines.forEach(element => {
       
         element=element.trim();
@@ -55,8 +54,6 @@ export class ReaddataService {
 
   private parse_readings():void
   {
-    console.log(this.readings_unparsed);
-
     var lines=this.get_lines_from_string(this.readings_unparsed.trim());
     lines.forEach(element => {
         element=element.trim();
@@ -68,9 +65,6 @@ export class ReaddataService {
           
         }
       });
-
-      console.log(this.readings.length)
-
 
   }
 

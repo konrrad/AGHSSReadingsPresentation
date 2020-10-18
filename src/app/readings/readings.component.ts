@@ -35,10 +35,8 @@ export class ReadingsComponent implements OnInit {
 
   get_readings():void
   {
-    console.log(this.id)
     this.readings=this.data_service.get_readings_by_id(this.id);
     this.invalid_reading=false;
-    console.log(this.readings);
   }
 
   process_data():void
@@ -46,7 +44,6 @@ export class ReadingsComponent implements OnInit {
     if(!(this.id===null))
     {
       this.sensor=this.data_service.get_sensor_by_id(this.id);
-      console.log(this.sensor);
       if(isNaN(this.sensor.a)||isNaN(this.sensor.b))
       {
         this.invalid_reading=true;

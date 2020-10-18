@@ -23,7 +23,6 @@ export class UploadComponent implements OnInit {
   fileWithIdsChanged(e):void
   {
     this.file_with_ids=e.target.files[0];
-    console.log("CHA")
   }
 
   fileWithReadingsChanged(e):void
