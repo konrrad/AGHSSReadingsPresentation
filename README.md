@@ -7,7 +7,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 `sudo apt install nodejs`
+
+
 `sudo apt install npm`
+
+
 `sudo npm install -g @angular/cli`
 
 cd into cloned repo
